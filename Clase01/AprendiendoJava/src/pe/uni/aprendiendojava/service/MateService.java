@@ -17,4 +17,22 @@ public class MateService {
 		}
 		return m;
 	}
+	
+	public int mayor(int n1, int n2, int n3, int n4, int n5){
+		int m;
+		m = n1; // Punto de partida
+		if(n2 > m){
+			m = n2;
+		}
+		if(n3 > m){
+			m = n3;
+		}
+		if(n4 > m){
+			m = n4;
+		}
+		if(n5 > m){
+			m = n5;
+		}
+		return m;
+	}
 }
