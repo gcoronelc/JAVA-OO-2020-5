@@ -5,6 +5,8 @@
  */
 package pe.edu.uni.pedidoapp.view;
 
+import pe.edu.uni.pedidoapp.service.PedidoService;
+
 /**
  *
  * @author Alumno
@@ -16,6 +18,7 @@ public class PedidoView extends javax.swing.JFrame {
 	 */
 	public PedidoView() {
 		initComponents();
+		this.setLocationRelativeTo(null);
 	}
 
 	/**
@@ -122,13 +125,28 @@ public class PedidoView extends javax.swing.JFrame {
     btnProcesar.setBackground(new java.awt.Color(153, 204, 255));
     btnProcesar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     btnProcesar.setText("Procesar");
+    btnProcesar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnProcesarActionPerformed(evt);
+      }
+    });
 
     btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     btnReset.setText("Reset");
     btnReset.setEnabled(false);
+    btnReset.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnResetActionPerformed(evt);
+      }
+    });
 
     btnSalir.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     btnSalir.setText("Salir");
+    btnSalir.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnSalirActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
@@ -183,6 +201,39 @@ public class PedidoView extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    System.exit(0);
+  }//GEN-LAST:event_btnSalirActionPerformed
+
+  private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+    // Previo
+		btnProcesar.setEnabled(false);
+		btnReset.setEnabled(true);
+		txtImporte.setEnabled(false);
+		// Variables
+		double importe, impuesto, total;
+		PedidoService pedidoService;
+		// Datos
+		importe = Double.parseDouble(txtImporte.getText());
+		// Proceso
+		pedidoService = new PedidoService();
+		impuesto = pedidoService.calcImpuesto(importe);
+		total = pedidoService.calcTotal(importe);
+		// Reporte
+		txtImpuesto.setText("" + impuesto);
+		txtTotal.setText("" + total);
+  }//GEN-LAST:event_btnProcesarActionPerformed
+
+  private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+    btnReset.setEnabled(false);
+    btnProcesar.setEnabled(true);
+		txtImporte.setEnabled(true);
+		txtImporte.setText("");
+		txtImpuesto.setText("");
+		txtTotal.setText("");
+		txtImporte.requestFocus();
+  }//GEN-LAST:event_btnResetActionPerformed
 
 	/**
 	 * @param args the command line arguments
