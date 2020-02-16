@@ -12,6 +12,7 @@
 - Código fuente: https://goo.gl/GRaOQg
 - Grupo de WS: https://chat.whatsapp.com/H6BBebNDZHEAqAk6gTU5ZS
 
+
 # DOCENTE
 
 - Docente: Eric Gustavo Coronel Castillo
@@ -19,6 +20,10 @@
 - Correo del curso: egcc.uni@gmail.com
 - Canal Youtube: https://www.youtube.com/c/DesarrollaSoftware
 - UDEMY: https://github.com/gcoronelc/UDEMY
+- Facebook 1: https://www.facebook.com/groups/universidadjava/
+- Facebook 2: https://www.facebook.com/groups/desarrollasoftware/
+- Facebook 3: https://www.facebook.com/groups/bolsa.sistemas/
+
 
 # YUTUBE
 
