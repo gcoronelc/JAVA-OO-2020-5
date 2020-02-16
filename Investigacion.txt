@@ -1,27 +1,26 @@
-1.-  Patrones Factory    
-2.-  Principios SOLID  -  Barrios y Hinostroza
-3.-  Expresiones Lambda y Strem en Java 8
-4.-  Pruebas Unitarias - Pilco
-5.-  Manejo de Archivos Log 
-6.-  Manejo de Datos Genericos - Generic
-7.-  Patrón Inyección de Dependencias - Flores
-8.-  Manejo de documentos XML - Riveros
-9.-  Manejo de Datos en Formato JSON - Pasaca
-10.- Expresiones regulares 
-11.- Patrón MVC - Cabrera Rojas
-12.- Patrón facade - Torres
-13.- Asociación, Agregación y Composición
+1.-  Patrones Factory (Son 3 patrones): Asto, Ruiz y Murrieta
+2.-  Principios SOLID:
+3.-  Expresiones Lambda y Strem en Java 8: 
+4.-  Pruebas Unitarias: 
+5.-  Manejo de Archivos Log: Lostaunau
+6.-  Manejo de Datos Genericos (Generic):
+7.-  Patrón Inyección de Dependencias:
+8.-  Manejo de documentos XML: 
+9.-  Manejo de Datos en Formato JSON: Chavez y Cardoso
+10.- Expresiones regulares: Melendez, Heredia y Felices
+11.- Patrón MVC: Montalvan
+12.- Patrón facade: 
+13.- Asociación, Agregación y Composición: 
 
 
-PROYECTO ALTERNATIVO
+PROYECTO ALTERNATIVO: Castillo Ruiz
 --------------------------------------
 Desarrollar un programa que
 permita a un profesional 
 calcular su impuesto a la renta 2019.
 
-Considerar que el profesional 
-solo tiene ingresos de 4ta y 
-5ta categoría.
+Considerar que el profesional solo 
+tiene ingresos de 4ta y 5ta categoría.
 
 El programa debe retornar un reporte de 
 ingresos, exonaraciones y impuesto
@@ -29,11 +28,6 @@ a pagar.
 
 Consultar información en la SUNAT.
 Simulador: http://renta.sunat.gob.pe/simuladores/cuarta_quinta
-
-
-- Arce y Perez
-
-
 
 
 	 
