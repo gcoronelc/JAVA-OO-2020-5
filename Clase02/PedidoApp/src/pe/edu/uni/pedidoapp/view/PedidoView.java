@@ -14,7 +14,7 @@ import pe.edu.uni.pedidoapp.validar.Validar;
  * @author Alumno
  */
 public class PedidoView extends javax.swing.JFrame {
-
+	
 	/**
 	 * Creates new form PedidoView
 	 */
