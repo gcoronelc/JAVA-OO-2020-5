@@ -203,12 +203,12 @@ public class PedidoView extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-    System.exit(0);
+		System.exit(0);
   }//GEN-LAST:event_btnSalirActionPerformed
 
   private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
     // Validación
-		
+
 		// Previo
 		btnProcesar.setEnabled(false);
 		btnReset.setEnabled(true);
@@ -223,13 +223,19 @@ public class PedidoView extends javax.swing.JFrame {
 		impuesto = pedidoService.calcImpuesto(importe);
 		total = pedidoService.calcTotal(importe);
 		// Reporte
-		txtImpuesto.setText("" + impuesto);
-		txtTotal.setText("" + total);
+		if (impuesto == -1 || total == -1) {
+			txtImpuesto.setText("Error");
+			txtTotal.setText("Error");
+		} else {
+			txtImpuesto.setText("" + impuesto);
+			txtTotal.setText("" + total);
+		}
+
   }//GEN-LAST:event_btnProcesarActionPerformed
 
   private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-    btnReset.setEnabled(false);
-    btnProcesar.setEnabled(true);
+		btnReset.setEnabled(false);
+		btnProcesar.setEnabled(true);
 		txtImporte.setEnabled(true);
 		txtImporte.setText("");
 		txtImpuesto.setText("");
@@ -242,7 +248,7 @@ public class PedidoView extends javax.swing.JFrame {
 	 */
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
 		 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
 		 */
@@ -262,7 +268,7 @@ public class PedidoView extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(PedidoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-        //</editor-fold>
+		//</editor-fold>
 
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
