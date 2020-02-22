@@ -5,7 +5,9 @@
  */
 package pe.edu.uni.pedidoapp.view;
 
+import java.awt.Color;
 import pe.edu.uni.pedidoapp.service.PedidoService;
+import pe.edu.uni.pedidoapp.validar.Validar;
 
 /**
  *
@@ -208,7 +210,13 @@ public class PedidoView extends javax.swing.JFrame {
 
   private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
     // Validación
-
+		if( Validar.isDouble(txtImporte.getText()) == false ){
+			txtImporte.setBackground(Color.PINK);
+			txtImporte.requestFocus();
+			return;
+		} else {
+			txtImporte.setBackground(Color.WHITE);
+		}
 		// Previo
 		btnProcesar.setEnabled(false);
 		btnReset.setEnabled(true);
