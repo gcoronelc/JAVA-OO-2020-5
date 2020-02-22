@@ -7,6 +7,24 @@ public class ProductoModel {
 	private int stock;
 	private boolean activo;
 
+	/**
+	 * Constructor por defecto
+	 */
+	public ProductoModel() {
+		this.nombre = "Pizza";
+		this.precio = 25.0;
+		this.setStock(100);
+		this.setActivo(true);
+		System.out.println("Objeto creado");
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		System.err.println("Chau objeto");
+	}
+	
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
