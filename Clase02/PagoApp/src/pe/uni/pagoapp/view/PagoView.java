@@ -1,5 +1,8 @@
 package pe.uni.pagoapp.view;
 
+import pe.uni.pagoapp.model.PagoModel;
+import pe.uni.pagoapp.service.PagoService;
+
 public class PagoView extends javax.swing.JFrame {
 
 	public PagoView() {
@@ -42,8 +45,10 @@ public class PagoView extends javax.swing.JFrame {
     jLabel1.setText("Horas x Día:");
 
     txtHorasDia.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    txtHorasDia.setDisabledTextColor(new java.awt.Color(0, 102, 255));
 
     txtDias.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    txtDias.setDisabledTextColor(new java.awt.Color(0, 102, 255));
 
     jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     jLabel2.setText("Días:");
@@ -52,6 +57,7 @@ public class PagoView extends javax.swing.JFrame {
     jLabel3.setText("Pago x Hora:");
 
     txtPagoHora.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    txtPagoHora.setDisabledTextColor(new java.awt.Color(0, 102, 255));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -98,8 +104,12 @@ public class PagoView extends javax.swing.JFrame {
     jLabel4.setText("Ingresos");
 
     txtIngresos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    txtIngresos.setDisabledTextColor(new java.awt.Color(0, 102, 255));
+    txtIngresos.setEnabled(false);
 
     txtRenta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    txtRenta.setDisabledTextColor(new java.awt.Color(0, 102, 255));
+    txtRenta.setEnabled(false);
 
     jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     jLabel5.setText("Renta:");
@@ -108,6 +118,8 @@ public class PagoView extends javax.swing.JFrame {
     jLabel6.setText("Neto:");
 
     txtNeto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    txtNeto.setDisabledTextColor(new java.awt.Color(0, 102, 255));
+    txtNeto.setEnabled(false);
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -152,12 +164,28 @@ public class PagoView extends javax.swing.JFrame {
 
     btnProcesar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     btnProcesar.setText("Procesar");
+    btnProcesar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnProcesarActionPerformed(evt);
+      }
+    });
 
     btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     btnReset.setText("Reset");
+    btnReset.setEnabled(false);
+    btnReset.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnResetActionPerformed(evt);
+      }
+    });
 
     btnSalir.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
     btnSalir.setText("Salir");
+    btnSalir.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnSalirActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
@@ -215,6 +243,46 @@ public class PagoView extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    System.exit(0);
+  }//GEN-LAST:event_btnSalirActionPerformed
+
+  private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+		// Previas
+		btnProcesar.setEnabled(false);
+		btnReset.setEnabled(true);
+		txtHorasDia.setEnabled(false);
+		txtDias.setEnabled(false);
+		txtPagoHora.setEnabled(false);
+		// Variables
+		PagoModel model = new PagoModel();
+		model.setHorasDia(Integer.parseInt(txtHorasDia.getText()));
+		model.setDias(Integer.parseInt(txtDias.getText()));
+		model.setPagoHora(Double.parseDouble(txtPagoHora.getText()));
+		// Proceso
+		PagoService service = new PagoService();
+		model = service.procesar(model);
+		// Reporte
+		txtIngresos.setText("" + model.getIngresos());
+		txtRenta.setText("" + model.getRenta());
+		txtNeto.setText("" + model.getNeto());
+  }//GEN-LAST:event_btnProcesarActionPerformed
+
+  private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+    btnProcesar.setEnabled(true);
+		btnReset.setEnabled(false);
+		txtHorasDia.setEnabled(true);
+		txtDias.setEnabled(true);
+		txtPagoHora.setEnabled(true);
+		txtHorasDia.setText("");
+		txtDias.setText("");
+		txtPagoHora.setText("");
+		txtHorasDia.requestFocus();
+		txtIngresos.setText("");
+		txtRenta.setText("");
+		txtNeto.setText("");
+  }//GEN-LAST:event_btnResetActionPerformed
 
 	/**
 	 * @param args the command line arguments
