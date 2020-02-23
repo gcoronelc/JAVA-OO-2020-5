@@ -256,8 +256,7 @@ public class PagoView extends javax.swing.JFrame {
 		boolean campo2 = Validar.validarIntPositivo(txtDias);
 		boolean campo3 = Validar.validarDoublePositivo(txtPagoHora);
 		if( campo1 == false || campo2 == false || campo3 == false ){
-			JOptionPane.showMessageDialog(rootPane, "Corregir errores.",
-							"ERROR",JOptionPane.ERROR_MESSAGE);
+			Validar.showError(rootPane, "Corregir errores.");
 			return;
 		}
 		// Previas

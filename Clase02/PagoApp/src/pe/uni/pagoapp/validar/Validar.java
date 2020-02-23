@@ -1,9 +1,26 @@
 package pe.uni.pagoapp.validar;
 
 import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Validar {
+	
+	// Constantes
+	private static String APP = "Pago App";
+	private static String TITULO_MSG_ERROR = "ERROR EN PROCESO";
+
+	/**
+	 * Constructor privado para que no sea posible instabciar la clase.
+	 */
+	private Validar() {
+	}
+	
+	public static void showError(Component component, Object message){
+		JOptionPane.showMessageDialog(component, message,
+							TITULO_MSG_ERROR,JOptionPane.ERROR_MESSAGE);
+	}
 	
 	public static  boolean validarIntPositivo(JTextField campo){
 		// Previas
