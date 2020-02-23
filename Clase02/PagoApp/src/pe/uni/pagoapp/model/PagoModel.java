@@ -11,9 +11,26 @@ public class PagoModel {
 	private double renta;
 	private double neto;
 
+	/**
+	 * Constructor por defecto
+	 */
 	public PagoModel() {
 	}
 
+	/**
+	 * Constructor adicional.
+	 * @param horasDia Horas trabajas por día.
+	 * @param dias Días trabajados en el mes.
+	 * @param pagoHora Pago por hora trabajada.
+	 */
+	public PagoModel(int horasDia, int dias, double pagoHora) {
+		this.horasDia = horasDia;
+		this.dias = dias;
+		this.pagoHora = pagoHora;
+	}
+
+	
+	
 	public int getHorasDia() {
 		return horasDia;
 	}
