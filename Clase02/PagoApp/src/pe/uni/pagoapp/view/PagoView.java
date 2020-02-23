@@ -1,7 +1,9 @@
 package pe.uni.pagoapp.view;
 
+import javax.swing.JOptionPane;
 import pe.uni.pagoapp.model.PagoModel;
 import pe.uni.pagoapp.service.PagoService;
+import pe.uni.pagoapp.validar.Validar;
 
 public class PagoView extends javax.swing.JFrame {
 
@@ -249,6 +251,15 @@ public class PagoView extends javax.swing.JFrame {
   }//GEN-LAST:event_btnSalirActionPerformed
 
   private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+		// Validar
+		boolean campo1 = Validar.validarIntPositivo(txtHorasDia);
+		boolean campo2 = Validar.validarIntPositivo(txtDias);
+		boolean campo3 = Validar.validarDoublePositivo(txtPagoHora);
+		if( campo1 == false || campo2 == false || campo3 == false ){
+			JOptionPane.showMessageDialog(rootPane, "Corregir errores.",
+							"ERROR",JOptionPane.ERROR_MESSAGE);
+			return;
+		}
 		// Previas
 		btnProcesar.setEnabled(false);
 		btnReset.setEnabled(true);
