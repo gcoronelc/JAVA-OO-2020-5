@@ -2,6 +2,12 @@ package aprendiendojava.service;
 
 public class Clase2 extends Clase1{
 
+	public Clase2() {
+		//super("Gustavo");
+	}
+	
+	
+
 	@Override
 	public double calcVenta(double precio, int cantidad) {
 		double venta;
