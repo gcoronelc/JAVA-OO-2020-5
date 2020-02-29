@@ -18,5 +18,7 @@ public class Clase2 extends Clase1{
 		return venta;
 	}
 	
-	
+	public double sumar(double n1, double n2){
+		return (n1 + n2);
+	}
 }
