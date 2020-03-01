@@ -4,7 +4,7 @@ import pe.uni.comprobanteapp.model.ConceptoModel;
 
 public abstract class CompAbstract {
 	
-	public abstract ConceptoModel[] proceso( double total);
+	public abstract ConceptoModel[] procesar( double total);
 	
 	
 	protected double round( double valor ){

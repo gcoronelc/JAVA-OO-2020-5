@@ -11,7 +11,7 @@ import pe.uni.comprobanteapp.model.ConceptoModel;
 public class BoletaService extends CompAbstract {
 
 	@Override
-	public ConceptoModel[] proceso(double total) {
+	public ConceptoModel[] procesar(double total) {
 		// Variables
 		double servicio, totalGeneral;
 		// Proceso

@@ -16,7 +16,7 @@ public class Prueba01 {
 		double total = 3456.76;
 		// Proceso
 		FacturaService service = new FacturaService();
-		ConceptoModel[] repo = service.proceso(total);
+		ConceptoModel[] repo = service.procesar(total);
 		// Reporte
 		for (ConceptoModel bean : repo) {
 			System.out.println(bean);

@@ -17,7 +17,7 @@ public class Prueba02 {
 		double total = 3456.76;
 		// Proceso
 		BoletaService service = new BoletaService();
-		ConceptoModel[] repo = service.proceso(total);
+		ConceptoModel[] repo = service.procesar(total);
 		// Reporte
 		for (ConceptoModel bean : repo) {
 			System.out.println(bean);

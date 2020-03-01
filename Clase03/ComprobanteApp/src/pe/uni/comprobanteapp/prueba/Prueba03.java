@@ -18,7 +18,7 @@ public class Prueba03 {
 		// Proceso
 		CompAbstract service;
 		service = CompFactory.getComp(CompFactory.TIPO_BOLETA);
-		ConceptoModel[] repo = service.proceso(total);
+		ConceptoModel[] repo = service.procesar(total);
 		// Reporte
 		for (ConceptoModel bean : repo) {
 			System.out.println(bean);
