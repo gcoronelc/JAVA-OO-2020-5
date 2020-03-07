@@ -19,11 +19,12 @@ Clase 02
 Clase 03
 ----------------------------------
 1.- Herencia
+2.- Interfaces
 
 
 Clase 04
 ----------------------------------
-1.- Interfaces
+1.- Casting
 2.- Arreglos
 3.- Colecciones
 
