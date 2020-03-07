@@ -8,7 +8,7 @@ import java.util.Random;
  * @blog http://gcoronelc.blogspot.com/
  * @youtube https://www.youtube.com/c/DesarrollaSoftware
  */
-public class Ejemplo08 {
+public class Prueba08 {
 
 	public static void main(String[] args) {
 		// Declarar el arreglo
